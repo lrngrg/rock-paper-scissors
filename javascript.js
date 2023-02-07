@@ -22,39 +22,51 @@ function playRound(playerSelection, computerSelection) {
     let computerCount = 0;
 
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        console.log("It's a tie!");
     }
 
     if (playerSelection === 'rock') {
         if (computerSelection === 'paper') {
             computerCount++;
-            return "You Lose! Paper beats Rock!";
+            console.log("You Lose! Paper beats Rock!");
+            console.log("Player: " + playerCount);
+            console.log("Computer: " + computerCount);
         }
         else {
             playerCount++;
-            return "You Win! Rock beats Scissors!";
+            console.log("You Win! Rock beats Scissors!");
+            console.log("Player: " + playerCount);
+            console.log("Computer: " + computerCount);
         }
     }
 
     if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
             playerCount++;
-            return "You Win! Paper beats Rock!";
+            console.log("You Win! Paper beats Rock!");
+            console.log("Player: " + playerCount);
+            console.log("Computer: " + computerCount);
         } 
         else {
             computerCount++
-            return "You Lose!  Scissors beats Paper!"
+            console.log("You Lose!  Scissors beats Paper!");
+            console.log("Player: " + playerCount);
+            console.log("Computer: " + computerCount);
         }
     }
 
     if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
             computerCount++;
-            return "You Lose! Rock beats Scissors!";
+            console.log("You Lose! Rock beats Scissors!");
+            console.log("Player: " + playerCount);
+            console.log("Computer: " + computerCount);
         } 
         else {
             playerCount++;
-            return "You Win! Scissors beats Paper!";
+            console.log("You Win! Scissors beats Paper!");
+            console.log("Player: " + playerCount);
+            console.log("Computer: " + computerCount);
         }
     }
 }
