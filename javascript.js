@@ -9,6 +9,9 @@ function playRound(playerSelection, computerSelection) {
 
     playerSelection = playerSelection.toLowerCase();
 
+    console.log(playerSelection);
+    console.log(computerSelection);
+
     if (playerSelection === computerSelection) {
         return "It's a tie!";
     }
@@ -27,11 +30,13 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === 'rock') return "You Lose! Rock beats Scissors!";
         else return "You Win! Scissors beats Paper!";
     }
-
 }
 
-const playerSelection = "paper";
-const computerSelection = getComputerChoice();
-console.log("You chose: " + playerSelection);
-console.log("The computer chose: " + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+// TEST
+// const playerSelection = "sciSSorS";
+// const computerSelection = getComputerChoice();
+// console.log(playRound(playerSelection, computerSelection))
+
+function game() {
+
+}
