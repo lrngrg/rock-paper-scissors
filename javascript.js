@@ -69,9 +69,10 @@ function game() {
         playRound();
     }
 
-    if (playerCount === computerCount) console.log("It's a tie!");
-    if (playerCount > computerCount) console.log("You win!");
-    if (playerCount < computerCount) console.log("You lose!");
+    if (playerCount === computerCount) console.log("Tie game ¯\_(ツ)_/¯");
+    if (playerCount > computerCount) console.log("YOU WON THE GAME");
+    if (playerCount < computerCount) console.log("You lost the game :(");
+
     playerCount = 0;
     computerCount = 0;
 }
