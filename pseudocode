@@ -31,13 +31,49 @@ Return the string telling the player the game results.
 Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 
 
-Begin a counter at 0.
+Begin a round number counter at 0.
 Add 1 everytime a round of the game is played, until you reach 5 games.
-Create two counters, one for the player, one for the computer.
-At the end of each round, increment the respective counter by 1 of whoever won.
+Create two counters, one for the player, one for the computer, that begin at 0.
 
-^^Each round should be played as above.^^
+PLAYER SELECT
+Ask player to choose rock, paper, or scissors;
+If the answer is not rock, paper, or scissors, ask again;
+Convert their answer to lowercase and store it in playerSelection;
 
+COMPUTER SELECT
+Create a list that contains: rock, paper, scissors;
+Randomly generate a number between 1 and 3 (or 0 & 2) to correspond with position in list;
+Store the choice that occupies that list position in computerSelection;
+
+COMPARE THE TWO SELECTIONS 
+Create an empty string;
+If playerSelection === computerSelection, it's a tie (add "It's a tie!" to string) and add nothing to the counters;
+
+If playerSelection === rock and computerSelection === paper, player loses (return "You Lose! Paper beats Rock!");
+Add 1 to the computer counter;
+Start a new round;
+
+If playerSelection === rock and computerSelection === scissors, player wins (return "You Win! Rock beats Scissors!");
+Add 1 to the player counter;
+Start a new round;
+
+If playerSelection === paper and computerSelection === rock, player wins (return "You Win! Paper beats Rock!");
+Add 1 to the player counter;
+Start a new round;
+
+If playerSelection === paper and computerSelection === scissors, player loses (return "You Lose!  Scissors beats Paper!");
+Add 1 to the computer counter;
+Start a new round;
+
+If playerSelection === scissors and computerSelection === paper, player wins (return "You Win! Scissors beats Paper!");
+Add 1 to the player counter;
+Start a new round;
+
+If playerSelection === scissors and computerSelection === rock, player loses (return "You Lose! Rock beats Scissors!");
+Add 1 to the computer counter;
+Start a new round;
+
+DECLARE RESULTS
 After the 5th round, compare to see who has the greater number of wins.
 If the player has less than the computer, they lose.
 If the player has more than the computer, they win.

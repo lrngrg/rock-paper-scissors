@@ -7,28 +7,55 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
 
-    playerSelection = playerSelection.toLowerCase();
+    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
+    while (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors') {
+        playerSelection = prompt("Choose Rock, Paper, or Scissors!").toLowerCase();
+    } 
+
+    computerSelection = getComputerChoice();
+
 
     console.log(playerSelection);
     console.log(computerSelection);
+
+    let playerCount = 0;
+    let computerCount = 0;
 
     if (playerSelection === computerSelection) {
         return "It's a tie!";
     }
 
     if (playerSelection === 'rock') {
-        if (computerSelection === 'paper') return "You Lose! Paper beats Rock!";
-        else return "You Win! Rock beats Scissors!";
+        if (computerSelection === 'paper') {
+            computerCount++;
+            return "You Lose! Paper beats Rock!";
+        }
+        else {
+            playerCount++;
+            return "You Win! Rock beats Scissors!";
+        }
     }
 
     if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') return "You Win! Paper beats Rock!";
-        else return "You Lose!  Scissors beats Paper!"
+        if (computerSelection === 'rock') {
+            playerCount++;
+            return "You Win! Paper beats Rock!";
+        } 
+        else {
+            computerCount++
+            return "You Lose!  Scissors beats Paper!"
+        }
     }
 
     if (playerSelection === 'scissors') {
-        if (computerSelection === 'rock') return "You Lose! Rock beats Scissors!";
-        else return "You Win! Scissors beats Paper!";
+        if (computerSelection === 'rock') {
+            computerCount++;
+            return "You Lose! Rock beats Scissors!";
+        } 
+        else {
+            playerCount++;
+            return "You Win! Scissors beats Paper!";
+        }
     }
 }
 
@@ -38,5 +65,12 @@ function playRound(playerSelection, computerSelection) {
 // console.log(playRound(playerSelection, computerSelection))
 
 function game() {
+   
+    for (let i=0; i < 5; i++) {
+        playRound();
+    }
 
+    if (playerCount === computerCount) return "It's a tie!";
+    if (playerCount > computerCount) return "You win!";
+    else return "You lose!"
 }
