@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
             console.log("Player: " + playerCount + " // " + "Computer: " + computerCount);
         } 
         else {
-            computerCount++
+            computerCount++;
             console.log("You Lose!  Scissors beats Paper!");
             console.log("Player: " + playerCount + " // " + "Computer: " + computerCount);
         }
