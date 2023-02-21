@@ -5,11 +5,18 @@ function getComputerChoice() {
     return weaponChoice;
 }
 
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.id;
+
+        playRound(button.id, getComputerChoice());
+    });
+});
+
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
-    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
-    while (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors') {
-        playerSelection = prompt("Choose Rock, Paper, or Scissors!").toLowerCase();
-    } 
+
 
     console.log("Player chose " + playerSelection);
     console.log("Computer chose " + computerSelection);
@@ -63,16 +70,18 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
 let playerCount = 0;
 let computerCount = 0;
 
-function game() {
-    for (let i=0; i < 5; i++) {
-        console.log("ROUND " + (i + 1))
-        playRound();
-    }
 
-    if (playerCount === computerCount) console.log("Tie game ¯\_(ツ)_/¯");
-    if (playerCount > computerCount) console.log("YOU WON THE GAME");
-    if (playerCount < computerCount) console.log("You lost the game :(");
 
-    playerCount = 0;
-    computerCount = 0;
-}
+// function playFiveRounds() {
+//     for (let i=0; i < 5; i++) {
+//         console.log("ROUND " + (i + 1))
+//         playRound();
+//     }
+
+//     if (playerCount === computerCount) console.log("Tie game ¯\_(ツ)_/¯");
+//     if (playerCount > computerCount) console.log("YOU WON THE GAME");
+//     if (playerCount < computerCount) console.log("You lost the game :(");
+
+//     playerCount = 0;
+//     computerCount = 0;
+// }
