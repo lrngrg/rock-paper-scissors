@@ -9,13 +9,11 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        playerSelection = button.id;
-
         playRound(button.id, getComputerChoice());
     });
 });
 
-function playRound(playerSelection, computerSelection = getComputerChoice()) {
+function playRound(playerSelection, computerSelection) {
 
 
     console.log("Player chose " + playerSelection);
