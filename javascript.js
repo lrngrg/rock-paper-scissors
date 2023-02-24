@@ -13,8 +13,11 @@ buttons.forEach((button) => {
     });
 });
 
+
 function playRound(playerSelection, computerSelection) {
 
+    let playerCount = 0;
+    let computerCount = 0;
 
     console.log("Player chose " + playerSelection);
     console.log("Computer chose " + computerSelection);
@@ -65,8 +68,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerCount = 0;
-let computerCount = 0;
+playerCount = 0;
+computerCount = 0;
 
 
 
